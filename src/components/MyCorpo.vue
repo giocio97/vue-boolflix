@@ -33,7 +33,10 @@ export default {
 },
   data(){
     return{
-        apiUrl:"https://api.themoviedb.org/3/movie/550?api_key=abd08d0dfd232b91ae3e260ac7989207&language=it-IT",
+        apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=abd08d0dfd232b91ae3e260ac7989207&language=it-IT&page=1&include_adult=false",
+       
+
+
         myMovieList: [],
         userText: "",
     }
