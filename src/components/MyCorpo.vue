@@ -55,7 +55,7 @@ export default {
           let currentUrl =this.apiUrl + "&query=" + this.userText;
           console.log(1,currentUrl);
            axios
-          .get(this.apiUrl)
+          .get(currentUrl)
           .then((result) => {
             this.myMovieList = result.data.results;
             console.log(2,result);
