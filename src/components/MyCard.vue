@@ -3,7 +3,7 @@
   <ul>
     <li>{{ movieObjet.title}}</li>
     <li>{{ movieObjet.original_title}}</li>
-    <li>{{ movieObjet.original_language}}</li>
+    <li> <lang-flag :iso="movieObjet.original_language"/> </li>
     <li>{{ movieObjet.vote_average}}</li>
 
 
@@ -13,11 +13,16 @@
 </template>
 
 <script>
+import LangFlag from 'vue-lang-code-flags'
+
 export default {
-   name: 'MyCard',
-   props:{
-    movieObjet:Object
-   } 
+    name: "MyCard",
+    props: {
+        movieObjet: Object
+    },
+    components: { 
+      LangFlag,
+     }
 }
 </script>
 
@@ -29,6 +34,7 @@ export default {
    text-align: center;
    
    background-color: #2e3a46;
+   color: white;
    
    
    

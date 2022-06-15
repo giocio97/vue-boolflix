@@ -1,12 +1,12 @@
 <template>
 <main>
 
-  <UserSearch @mySearch = "searchMovie"/>
+    <UserSearch @mySearch = "searchMovie"/>
 
      <section>
      
         <MyCard
-        v-for="(item, index) in  filteredMovie"
+        v-for="(item, index) in myMovieList "
         :key="index"
         :movieObjet="item"
         />
@@ -33,7 +33,7 @@ export default {
 },
   data(){
     return{
-        apiUrl:"https://api.themoviedb.org/3/search/movie?api_key=abd08d0dfd232b91ae3e260ac7989207&language=it-IT",
+        apiUrl:"https://api.themoviedb.org/3/movie/550?api_key=abd08d0dfd232b91ae3e260ac7989207&language=it-IT",
         myMovieList: [],
         userText: "",
     }
@@ -55,8 +55,8 @@ export default {
           .get(this.apiUrl)
           .then((result) => {
             this.myMovieList = result.data.results;
-            console.log(result);
-            console.log(this.myMovieList);
+            console.log(2,result);
+            console.log(3,this.myMovieList);
           })
           .catch((error)=> {
             console.log("errore", error);
@@ -67,23 +67,14 @@ export default {
     },
 
     searchMovie(filmUser){
-       console.log(this.userText);
+       console.log(4,this.userText);
       this.userText = filmUser;
+      this.getMovie();
+
 
     }
-  },
-  computed:{
-    filteredMovie(){
-      if (this.userText === ""){
-      return this.myMovieList;
-      } else{
-        return this. myMovieList.filter(item => {
-          return item.title.toLowerCase().includes(this.userText.toLowerCase());
-        
-      });
-      }
-    },
-  },
+  }
+ 
 }
 </script>
 
