@@ -33,7 +33,7 @@ export default {
 },
   data(){
     return{
-        apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=abd08d0dfd232b91ae3e260ac7989207&language=it-IT&page=1&include_adult=false",
+        apiUrl: "https://api.themoviedb.org/3/search/multi?api_key=abd08d0dfd232b91ae3e260ac7989207&language=it-IT&page=1&include_adult=false",
        
 
 
@@ -87,6 +87,8 @@ main{
   background-color: #1e2d3b;
   text-align: center;
    height: calc(100vh - 5vh);
+  
+   
   section{
    
     
