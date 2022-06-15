@@ -1,7 +1,7 @@
 <template>
 <main>
 
-  <Search @mySearch = "searchMovie"/>
+  <UserSearch @mySearch = "searchMovie"/>
 
      <section>
      
@@ -20,7 +20,7 @@
 
 import axios from "axios"
 import MyCard from '@/components/MyCard.vue'
-import Search from './components/Search.vue'
+import UserSearch from './components/Search.vue'
 
 
 
@@ -28,7 +28,7 @@ export default {
   name: 'MyCorpo',
    components: {
     MyCard,
-    Search,
+    UserSearch,
     
 },
   data(){

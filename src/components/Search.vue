@@ -3,8 +3,8 @@
 <div>
     <input  type="text" placeholder="search"
      v-model="inputSearch" 
-     @keyup.enter ="$emit(`mySearch`, thisinputSearch)"/>
-   
+     @keyup.enter ="$emit(`mySearch`, this.inputSearch)"/>
+    <button @click.prevent="$emit(`mySearch`, this.inputSearch)">VAI</button>
 </div>
    
 
@@ -18,7 +18,7 @@
 
 
 export default {
-  name: 'Search',
+  name: 'UserSearch',
    
   data(){
     return{

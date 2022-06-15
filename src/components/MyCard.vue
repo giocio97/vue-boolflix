@@ -1,10 +1,10 @@
 <template>
  <div class="card">
   <ul>
-    <li>{{title}}</li>
-    <li>{{original_title}}</li>
-    <li>{{original_language}}</li>
-    <li>{{vote_average}}</li>
+    <li>{{ movieObjet.title}}</li>
+    <li>{{ movieObjet.original_title}}</li>
+    <li>{{ movieObjet.original_language}}</li>
+    <li>{{ movieObjet.vote_average}}</li>
 
 
   </ul>
