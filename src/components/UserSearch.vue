@@ -3,8 +3,8 @@
 <div>
     <input  type="text" placeholder="search"
      v-model="inputSearch" 
-     @keyup.enter ="$emit(`mySearch`, this.inputSearch)"/>
-    <button @click.prevent="$emit(`mySearch`, this.inputSearch)">VAI</button>
+     @keyup.enter ="$emit(`UserSearch`, this.inputSearch)"/>
+    <button @click.prevent="$emit(`UserSearch`, this.inputSearch)">VAI</button>
 </div>
    
 

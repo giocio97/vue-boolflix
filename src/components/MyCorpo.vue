@@ -20,7 +20,7 @@
 
 import axios from "axios"
 import MyCard from '@/components/MyCard.vue'
-import UserSearch from './components/Search.vue'
+import UserSearch from '@/components/UserSearch.vue'
 
 
 
