@@ -1,13 +1,14 @@
 <template>
  <div class="card">
-  <ul>
-    <li>{{ movieObjet.title}}</li>
-    <li>{{ movieObjet.original_title}}</li>
-    <li> <lang-flag :iso="movieObjet.original_language"/> </li>
-    <li>{{ movieObjet.vote_average}}</li>
+  
+    <img :src="`https://image.tmdb.org/t/p/w342/${movieObjet.poster_path}`" :alt="movieObjet.title">
+    <h4>{{ movieObjet.title}}</h4>
+    <span>{{ movieObjet.original_title}}</span><br>
+    <span> <lang-flag :iso="movieObjet.original_language"/> </span><br>
+    <span>{{ movieObjet.vote_average}}</span>
 
 
-  </ul>
+  
  </div>
  
 </template>
