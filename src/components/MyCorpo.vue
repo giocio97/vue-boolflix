@@ -1,12 +1,12 @@
 <template>
 <main>
 
-  <!-- <SelectGenere @mySearch = "searchGenere"/> -->
+  <Search @mySearch = "searchMovie"/>
 
      <section>
      
-        <Card
-        v-for="(item, index) in myMovieList"
+        <MyCard
+        v-for="(item, index) in  filteredMovie"
         :key="index"
         :movieObjet="item"
         />
@@ -19,40 +19,54 @@
 <script>
 
 import axios from "axios"
-import Card from '@/components/Card.vue'
+import MyCard from '@/components/MyCard.vue'
+import Search from './components/Search.vue'
+
 
 
 export default {
   name: 'MyCorpo',
    components: {
-    Card,
+    MyCard,
+    Search,
     
 },
   data(){
     return{
-        apiUrl:"https://api.themoviedb.org/3/search/movie?api_key=abd08d0dfd232b91ae3e260ac7989207&language=it-IT&query=una + notte + da + leoni &page=1&include_adult=true",
+        apiUrl:"https://api.themoviedb.org/3/search/movie?api_key=abd08d0dfd232b91ae3e260ac7989207&language=it-IT",
         myMovieList: [],
         userText: "",
     }
   },
 
   created(){
-    this.Movie();
+    this.getMovie();
   },
 
   methods:{
     getMovie(){
-        axios
-        .get(this.apiUrl)
-        .then((result) => {
-        this.myMovieList = result.data.results;
-        console.log(result);
-        console.log(this.myMovieList);
        
-    })
+
+        if(this.userText !== ""){
+
+          let currentUrl =this.apiUrl + "&query=" + this.userText;
+          console.log(1,currentUrl);
+           axios
+          .get(this.apiUrl)
+          .then((result) => {
+            this.myMovieList = result.data.results;
+            console.log(result);
+            console.log(this.myMovieList);
+          })
+          .catch((error)=> {
+            console.log("errore", error);
+          })
+        }
+       
+   
     },
 
-    searchGenere(filmUser){
+    searchMovie(filmUser){
        console.log(this.userText);
       this.userText = filmUser;
 
@@ -64,7 +78,7 @@ export default {
       return this.myMovieList;
       } else{
         return this. myMovieList.filter(item => {
-          return item.original_title.toLowerCase().includes(this.userText.toLowerCase());
+          return item.title.toLowerCase().includes(this.userText.toLowerCase());
         
       });
       }
