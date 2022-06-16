@@ -9,6 +9,7 @@
 <script>
 import UserSearch from '@/components/UserSearch.vue'
 
+
 export default {
    name: 'MyIntestazione',
    components: {

@@ -6,6 +6,7 @@
 </template>
 
 <script>
+
 import MyIntestazione from './components/MyIntestazione.vue'
 import MyCorpo from './components/MyCorpo.vue'
 
@@ -21,7 +22,6 @@ export default {
 
 <style lang="scss">
 
-// @import “../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome”;
 
 *{
   margin: 0;
