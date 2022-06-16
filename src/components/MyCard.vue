@@ -6,7 +6,9 @@
           <h4> Titolo: {{ movieObjet.title}}</h4>
          <span>Titolo originale: {{ movieObjet.original_title}}</span><br>
          <span> Lingua: <lang-flag :iso="movieObjet.original_language"/> </span><br>
-         <i v-for=" i in starCalc(movieObjet.vote_average)" :key="i"> <font-awesome-icon  icon="fa-solid fa-star"/></i>
+         <span>voto: <i v-for=" i in starCalc(movieObjet.vote_average)" :key="i">  <font-awesome-icon  icon="fa-solid fa-star"/></i></span>
+         <i v-for=" y in  starVuote(movieObjet.vote_average)" :key="y">  <font-awesome-icon icon="fa-regular fa-star" /></i>
+
       </div>
    
     <!-- <span>{{ movieObjet.vote_average}}</span> -->
@@ -55,26 +57,28 @@ export default {
    color: white;
   
     img{
+     
      &:hover{
       opacity: 0.5;
-     }
-   }
-   
-   
-//     img{
-//       width: 160px;
-     
-//       object-fit: contain;
-//       margin: 20px;
       
-//    }
+     };
+     
 
-//    h4{
-//       color: white;
-//    }
-//    span{
-//       color: grey;
-//    }
+   }
+
+   .hovercard{
+      
+     
+         &:hover{
+         display: block;
+         
+      };
+   }
+
+
+   
+   
+
    
   
    

@@ -1,7 +1,13 @@
 <template>
+<div>
+  <header>
+  <img src="../assets/img/logobolflix.png" alt="logo">
+  <UserSearch @mySearch = "searchMovie"/>
+ </header>
+
 <main>
 
-    <UserSearch @mySearch = "searchMovie"/>
+
 
      <section>
      
@@ -13,6 +19,7 @@
   </section>
 </main>
 
+</div>
  
 </template>
 
@@ -83,6 +90,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+header{
+background-color: #000000;
+height: 5vh;
+display: flex;
+justify-content:space-between;
+padding: 10px;
+
+
+
+
+}
+
 main{
   background-color: #313234;
   text-align: center;

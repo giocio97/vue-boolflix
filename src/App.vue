@@ -1,20 +1,20 @@
 <template>
   <div id="app">
-  <MyIntestazione/>
+  
    <MyCorpo/>
   </div>
 </template>
 
 <script>
 
-import MyIntestazione from './components/MyIntestazione.vue'
+
 import MyCorpo from './components/MyCorpo.vue'
 
 
 export default {
   name: 'App',
   components: {
-   MyIntestazione,
+   
     MyCorpo
 }
 }
