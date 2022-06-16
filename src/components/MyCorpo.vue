@@ -84,9 +84,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 main{
-  background-color: #1e2d3b;
+  background-color: #313234;
   text-align: center;
-   height: calc(100vh - 5vh);
+   min-height: 95vh;
   
    
   section{

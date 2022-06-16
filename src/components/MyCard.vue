@@ -2,10 +2,12 @@
  <div class="card">
   
     <img :src="`https://image.tmdb.org/t/p/w342/${movieObjet.poster_path}`" :alt="movieObjet.title">
-    <h4>{{ movieObjet.title}}</h4>
-    <span>{{ movieObjet.original_title}}</span><br>
-    <span> <lang-flag :iso="movieObjet.original_language"/> </span><br>
-    <i v-for="i in starCalc(movieObjet.vote_average)" :key="i"> <font-awesome-icon  icon="fa-solid fa-star"/></i>
+      <div class="hovercard">
+          <h4> Titolo: {{ movieObjet.title}}</h4>
+         <span>Titolo originale: {{ movieObjet.original_title}}</span><br>
+         <span> Lingua: <lang-flag :iso="movieObjet.original_language"/> </span><br>
+         <!-- <i v-for="i in starCalc(movieObjet.vote_average)" :key="i"> <font-awesome-icon  icon="fa-solid fa-star"/></i> -->
+      </div>
    
     <!-- <span>{{ movieObjet.vote_average}}</span> -->
 
@@ -28,14 +30,14 @@ export default {
       LangFlag,
      },
      methods:{
-      starCalc(vote){
-        let calc = parseInt(Math.round(vote/ 2));
-        return calc;
-      },
-      starVuote(vuote){
-      let stelleVuote =  parseInt(5 - Math.round(vuote/ 2));
-      return stelleVuote;
-      },
+      // starCalc(vote){
+      //   let calc = parseInt(Math.round(vote/ 2));
+      //   return calc;
+      // },
+      // starVuote(vuote){
+      // let stelleVuote =  parseInt(5 - Math.round(vuote/ 2));
+      // return stelleVuote;
+      // },
 
      }
 }
@@ -49,9 +51,14 @@ export default {
    flex-basis:calc(20% - 5px);
    text-align: center;
    
-   background-color: #2e3a46;
+   // background-color: #2e3a46;
    color: white;
-   
+  
+    img{
+     &:hover{
+      opacity: 0.5;
+     }
+   }
    
    
 //     img{
