@@ -5,7 +5,9 @@
     <h4>{{ movieObjet.title}}</h4>
     <span>{{ movieObjet.original_title}}</span><br>
     <span> <lang-flag :iso="movieObjet.original_language"/> </span><br>
-    <span>{{ movieObjet.vote_average}}</span>
+    <i v-for="i in starCalc(movieObjet.vote_average)" :key="i"> <font-awesome-icon  icon="fa-solid fa-star"/></i>
+   
+    <!-- <span>{{ movieObjet.vote_average}}</span> -->
 
 
   
@@ -23,6 +25,17 @@ export default {
     },
     components: { 
       LangFlag,
+     },
+     methods:{
+      starCalc(vote){
+        let calc = parseInt(math.round(vote/ 2));
+        return calc;
+      },
+      starVuote(vuote){
+      let stelleVuote =  parseInt(5 - math.round(vuote/ 2));
+      return stelleVuote;
+      },
+
      }
 }
 </script>
