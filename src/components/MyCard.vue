@@ -18,6 +18,7 @@
 <script>
 import LangFlag from 'vue-lang-code-flags'
 
+
 export default {
     name: "MyCard",
     props: {
@@ -28,11 +29,11 @@ export default {
      },
      methods:{
       starCalc(vote){
-        let calc = parseInt(math.round(vote/ 2));
+        let calc = parseInt(Math.round(vote/ 2));
         return calc;
       },
       starVuote(vuote){
-      let stelleVuote =  parseInt(5 - math.round(vuote/ 2));
+      let stelleVuote =  parseInt(5 - Math.round(vuote/ 2));
       return stelleVuote;
       },
 
@@ -42,6 +43,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+
 .card{
    
    flex-basis:calc(20% - 5px);
